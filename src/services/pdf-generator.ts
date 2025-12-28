@@ -141,7 +141,7 @@ export async function generatePdf(report: SimplifiedReport): Promise<Blob> {
   return new Promise<Blob>((resolve, reject) => {
     try {
       const pdfGenerator = pdfMake.createPdf(documentDefinition);
-      pdfGenerator.getBlob((blob) => {
+      pdfGenerator.getBlob((blob: Blob) => {
         resolve(blob);
       });
     } catch (error) {
